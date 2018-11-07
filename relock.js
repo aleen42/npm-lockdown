@@ -36,7 +36,7 @@ function relock () {
           walk(cache, data.dependencies[key], packages);
         });
       }
-      fs.writeFile(path.join(cwd, 'lockdown.json'), JSON.stringify(sortObj(packages), null, '  ') + '\n');
+      fs.writeFileSync(path.join(cwd, 'lockdown.json'), JSON.stringify(sortObj(packages), null, '  ') + '\n');
     });
   });
 }
